@@ -1,0 +1,14 @@
+src = main.o sub.o mult.o
+target = app
+
+$(target): $(src)
+	$(CXX) $(src) -o $(target)
+
+sub.o: sub.cpp
+	g++ -c sub.cpp -o sub.o
+
+mult.o: mult.cpp
+	g++ -c mult.cpp -o mult.o
+
+main.o: main.cpp
+	g++ -c main.cpp -o main.o

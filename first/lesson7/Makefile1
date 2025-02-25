@@ -1,0 +1,11 @@
+app: main.o sub.o mult.o
+	g++ main.o sub.o mult.o -o app
+
+sub.o: sub.cpp
+	g++ -c sub.cpp -o sub.o
+
+mult.o: mult.cpp
+	g++ -c mult.cpp -o mult.o
+
+main.o: main.cpp
+	g++ -c main.cpp -o main.o
