@@ -91,6 +91,7 @@ int main() {
                     std::cout << "recv client data : " << recvBuf << std::endl;
                 } else {
                     std::cout << "client closed..." << std::endl;
+                    break;
                 }
                 write(cfd, recvBuf, strlen(recvBuf));
             }

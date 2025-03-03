@@ -44,6 +44,14 @@
         "numbers": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "charconv": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "span": "cpp",
+        "variant": "cpp",
+        "format": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp"
     }
 }

@@ -31,7 +31,7 @@ int main() {
     int i = 0;
     while (true) {
         //给服务器发送数据
-        std::string data = std::format("data: {}\n", i++);
+        std::string data = std::format("send data: {}\n", i++);
         write(fd, data.c_str(), data.size());
         int len = read(fd, recvBuf, sizeof(recvBuf));
         if (len == -1) {
@@ -44,7 +44,8 @@ int main() {
             std::cout << "server closed...\n";
             break;
         }
-        sleep(1);
+        // sleep(1);
+        usleep(1000);
     }
 
     //关闭连接

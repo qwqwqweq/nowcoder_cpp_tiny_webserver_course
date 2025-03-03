@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <string>
 #include <format>
+#include <cstdlib>
 
 int main() {
     //1 创建套接字
@@ -31,7 +32,8 @@ int main() {
     int i = 0;
     while (true) {
         //给服务器发送数据
-        std::string data = std::format("data: {}\n", i++);
+        std::string data;
+        getline(std::cin, data);
         write(fd, data.c_str(), data.size());
         int len = read(fd, recvBuf, sizeof(recvBuf));
         if (len == -1) {
@@ -44,7 +46,6 @@ int main() {
             std::cout << "server closed...\n";
             break;
         }
-        sleep(1);
     }
 
     //关闭连接
